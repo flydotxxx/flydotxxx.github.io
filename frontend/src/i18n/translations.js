@@ -13,7 +13,6 @@ export const translations = {
       links: [
         { to: "/brands", label: "Brands", desc: "Three companies, one standard." },
         { to: "/founders", label: "Founders", desc: "The people behind Charlotte." },
-        { to: "/operations", label: "Operations", desc: "Always on, across time zones." },
         { to: "/about", label: "About", desc: "A Kentucky LLC, operating worldwide." },
       ],
     },
@@ -161,7 +160,6 @@ export const translations = {
       links: [
         { to: "/brands", label: "Marques", desc: "Trois entreprises, une exigence." },
         { to: "/founders", label: "Fondateurs", desc: "Les personnes derrière Charlotte." },
-        { to: "/operations", label: "Opérations", desc: "Toujours actif, à travers les fuseaux." },
         { to: "/about", label: "À propos", desc: "Une LLC du Kentucky, opérant mondialement." },
       ],
     },

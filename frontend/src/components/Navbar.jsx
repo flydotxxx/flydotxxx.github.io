@@ -19,7 +19,6 @@ export const Navbar = () => {
   const links = [
     { to: "/brands", label: t.nav.brands, testid: "nav-brands-link" },
     { to: "/founders", label: t.nav.founders, testid: "nav-founders-link" },
-    { to: "/operations", label: t.nav.operations, testid: "nav-operations-link" },
     { to: "/about", label: t.nav.about, testid: "nav-about-link" },
   ];
 

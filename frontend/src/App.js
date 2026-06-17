@@ -4,7 +4,6 @@ import { Layout } from "@/components/Layout";
 import HomePage from "@/pages/HomePage";
 import BrandsPage from "@/pages/BrandsPage";
 import FoundersPage from "@/pages/FoundersPage";
-import OperationsPage from "@/pages/OperationsPage";
 import AboutPage from "@/pages/AboutPage";
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/brands" element={<BrandsPage />} />
             <Route path="/founders" element={<FoundersPage />} />
-            <Route path="/operations" element={<OperationsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<HomePage />} />
           </Route>
