@@ -12,16 +12,17 @@ const fmt = (tz, lang) =>
     timeZone: tz,
   });
 
-const CityClock = ({ city, idx }) => {
+const CityClock = ({ city, idx, showClock = true }) => {
   const { lang } = useLanguage();
   const [time, setTime] = useState("--:--:--");
 
   useEffect(() => {
+    if (!showClock) return;
     const tick = () => setTime(fmt(city.tz, lang).format(new Date()));
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, [city.tz, lang]);
+  }, [city.tz, lang, showClock]);
 
   return (
     <motion.div
@@ -36,19 +37,23 @@ const CityClock = ({ city, idx }) => {
         <span className="font-mono-label uppercase tracking-[0.18em] text-[10px] text-zinc-500">
           {city.region}
         </span>
-        <span className="flex items-center gap-1.5 font-mono-label uppercase tracking-[0.18em] text-[10px] text-emerald-400">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          {city.live}
-        </span>
+        {showClock && (
+          <span className="flex items-center gap-1.5 font-mono-label uppercase tracking-[0.18em] text-[10px] text-emerald-400">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            {city.live}
+          </span>
+        )}
       </div>
 
       <div className="font-display font-bold text-white text-2xl md:text-3xl tracking-tight mt-5">
         {city.city}
       </div>
 
-      <div className="font-mono-label text-3xl md:text-4xl text-white tabular-nums mt-3">
-        {time}
-      </div>
+      {showClock && (
+        <div className="font-mono-label text-3xl md:text-4xl text-white tabular-nums mt-3">
+          {time}
+        </div>
+      )}
 
       <div className="mt-5 pt-4 border-t border-white/10">
         <ScrambleText
@@ -60,7 +65,7 @@ const CityClock = ({ city, idx }) => {
   );
 };
 
-export const GlobalOps = () => {
+export const GlobalOps = ({ showClock = true }) => {
   const { t } = useLanguage();
   const ops = t.ops;
 
@@ -95,6 +100,7 @@ export const GlobalOps = () => {
               key={city.tz}
               city={{ ...city, live: ops.live }}
               idx={idx}
+              showClock={showClock}
             />
           ))}
         </div>

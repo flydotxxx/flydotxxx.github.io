@@ -13,6 +13,7 @@ export const translations = {
       links: [
         { to: "/brands", label: "Brands", desc: "Three companies, one standard." },
         { to: "/founders", label: "Founders", desc: "The people behind Charlotte." },
+        { to: "/operations", label: "Operations", desc: "Always on, across time zones." },
         { to: "/about", label: "About", desc: "A Kentucky LLC, operating worldwide." },
       ],
     },
@@ -292,5 +293,8 @@ export const translations = {
         "Charlotte LLC est une société à responsabilité limitée enregistrée dans le Commonwealth du Kentucky, États-Unis. Les opérations européennes (EMEA) sont gérées par FLYX Ltd.",
       rights: "Tous droits réservés.",
     },
+  },
+};
+},
   },
 };

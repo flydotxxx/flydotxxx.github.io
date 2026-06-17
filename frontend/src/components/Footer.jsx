@@ -15,6 +15,7 @@ export const Footer = () => {
   const pageLinks = [
     { label: t.nav.brands, to: "/brands" },
     { label: t.nav.founders, to: "/founders" },
+    { label: t.nav.operations, to: "/operations" },
     { label: t.nav.about, to: "/about" },
   ];
 
