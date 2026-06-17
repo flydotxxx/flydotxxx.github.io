@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
+import { NetworkCanvas } from "@/components/NetworkCanvas";
 import { ScrambleText } from "@/components/ScrambleText";
 import { MagneticButton } from "@/components/MagneticButton";
 
@@ -38,6 +39,7 @@ export const Hero = () => {
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/70" />
+        <NetworkCanvas />
         <div className="absolute -top-1/3 right-0 w-[60vw] h-[60vw] rounded-full bg-white/[0.04] blur-3xl" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/80 via-transparent to-transparent" />

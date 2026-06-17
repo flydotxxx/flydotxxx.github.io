@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
 import { Hero } from "@/components/Hero";
 import { Ticker } from "@/components/Ticker";
+import { GlobalOps } from "@/components/GlobalOps";
 
 const ExploreHub = () => {
   const { t } = useLanguage();
@@ -64,6 +65,7 @@ export default function HomePage() {
       <Hero />
       <Ticker />
       <ExploreHub />
+      <GlobalOps />
     </>
   );
 }
