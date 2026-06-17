@@ -3,10 +3,14 @@ import { Quote } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const PHOTOS = {
-  Pierre:
-    "https://customer-assets.emergentagent.com/job_snow-performance-1/artifacts/59r0avhq_image.png",
-  Emeric:
-    "https://customer-assets.emergentagent.com/job_snow-performance-1/artifacts/7kograrh_image.png",
+  Pierre: {
+    src: "https://customer-assets.emergentagent.com/job_snow-performance-1/artifacts/59r0avhq_image.png",
+    position: "center 15%",
+  },
+  Emeric: {
+    src: "https://customer-assets.emergentagent.com/job_snow-performance-1/artifacts/7kograrh_image.png",
+    position: "center 25%",
+  },
 };
 
 const FounderCard = ({ member, idx, quoteLabel }) => (
@@ -18,11 +22,12 @@ const FounderCard = ({ member, idx, quoteLabel }) => (
     data-testid={`founder-card-${idx}`}
     className="group relative flex flex-col bg-[#0A0A0A] border border-white/10 hover:border-white/30 transition-colors duration-500"
   >
-    <div className="relative h-80 sm:h-96 overflow-hidden">
+    <div className="relative h-80 sm:h-96 overflow-hidden bg-[#0A0A0A]">
       <img
-        src={PHOTOS[member.name]}
+        src={PHOTOS[member.name].src}
         alt={member.name}
-        className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700"
+        style={{ objectPosition: PHOTOS[member.name].position }}
+        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent" />
       <span className="absolute top-5 left-6 font-mono-label text-xs tracking-[0.25em] text-zinc-300">
