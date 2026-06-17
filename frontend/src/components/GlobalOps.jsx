@@ -45,8 +45,13 @@ const CityClock = ({ city, idx, showClock = true }) => {
         )}
       </div>
 
-      <div className="font-display font-bold text-white text-2xl md:text-3xl tracking-tight mt-5">
-        {city.city}
+      <div className="flex items-center gap-2.5 mt-5">
+        <span className="text-2xl md:text-3xl leading-none" aria-hidden="true">
+          {city.flag}
+        </span>
+        <span className="font-display font-bold text-white text-2xl md:text-3xl tracking-tight">
+          {city.city}
+        </span>
       </div>
 
       {showClock && (
@@ -61,6 +66,10 @@ const CityClock = ({ city, idx, showClock = true }) => {
           className="font-mono-label uppercase tracking-[0.18em] text-[10px] text-zinc-500"
         />
       </div>
+
+      <p className="font-body text-zinc-500 text-sm leading-relaxed mt-4">
+        {city.reason}
+      </p>
     </motion.div>
   );
 };

@@ -131,9 +131,11 @@ export const translations = {
         "From our Kentucky headquarters to our hosting and engineering hubs — a distributed operation that never sleeps.",
       live: "Live",
       cities: [
-        { city: "Louisville", region: "Kentucky, US", tz: "America/Kentucky/Louisville", role: "Headquarters" },
-        { city: "Nicosia", region: "Cyprus", tz: "Asia/Nicosia", role: "Hosting · spy.lu" },
-        { city: "Strasbourg", region: "France", tz: "Europe/Paris", role: "Engineering · snow.gg" },
+        { city: "Louisville", flag: "🇺🇸", region: "Kentucky, US", tz: "America/Kentucky/Louisville", role: "Headquarters", reason: "Our US base — a business-friendly Kentucky registration and central time-zone coverage for operations outside EMEA." },
+        { city: "Saint Peter Port", flag: "🇬🇬", region: "Guernsey", tz: "Europe/Guernsey", role: "Infrastructure", reason: "A stable, self-governing jurisdiction with a strong privacy and data-protection regime, tax neutrality and resilient fibre links to the UK and mainland Europe." },
+        { city: "Luxembourg", flag: "🇱🇺", region: "Luxembourg", tz: "Europe/Luxembourg", role: "Data center", reason: "A premier European data-centre hub: Tier IV facilities, dense carrier connectivity, political stability and one of the EU's most robust legal frameworks." },
+        { city: "Nicosia", flag: "🇨🇾", region: "Cyprus", tz: "Asia/Nicosia", role: "Hosting · spy.lu", reason: "Cyprus jurisdiction for offshore hosting — discretion, favourable regulation and a gateway between Europe and the wider region." },
+        { city: "Strasbourg", flag: "🇫🇷", region: "France", tz: "Europe/Paris", role: "Engineering · snow.gg", reason: "Home of our engineering team, on the Franco-German border with excellent European network backbones." },
       ],
     },
     footer: {
@@ -278,9 +280,11 @@ export const translations = {
         "De notre siège du Kentucky à nos pôles d'hébergement et d'ingénierie — une opération distribuée qui ne dort jamais.",
       live: "En direct",
       cities: [
-        { city: "Louisville", region: "Kentucky, US", tz: "America/Kentucky/Louisville", role: "Siège" },
-        { city: "Nicosia", region: "Chypre", tz: "Asia/Nicosia", role: "Hébergement · spy.lu" },
-        { city: "Strasbourg", region: "France", tz: "Europe/Paris", role: "Ingénierie · snow.gg" },
+        { city: "Louisville", flag: "🇺🇸", region: "Kentucky, US", tz: "America/Kentucky/Louisville", role: "Siège", reason: "Notre base américaine — une immatriculation au Kentucky favorable aux entreprises et une couverture horaire centrale pour les opérations hors EMEA." },
+        { city: "Saint-Pierre-Port", flag: "🇬🇬", region: "Guernesey", tz: "Europe/Guernsey", role: "Infrastructure", reason: "Une juridiction stable et autonome, dotée d'un solide régime de confidentialité et de protection des données, d'une neutralité fiscale et de liaisons fibre résilientes vers le Royaume-Uni et l'Europe continentale." },
+        { city: "Luxembourg", flag: "🇱🇺", region: "Luxembourg", tz: "Europe/Luxembourg", role: "Datacenter", reason: "Un hub de datacenters européen de premier plan : installations Tier IV, connectivité opérateurs dense, stabilité politique et l'un des cadres juridiques les plus solides de l'UE." },
+        { city: "Nicosia", flag: "🇨🇾", region: "Chypre", tz: "Asia/Nicosia", role: "Hébergement · spy.lu", reason: "Juridiction chypriote pour l'hébergement offshore — discrétion, réglementation favorable et passerelle entre l'Europe et la région élargie." },
+        { city: "Strasbourg", flag: "🇫🇷", region: "France", tz: "Europe/Paris", role: "Ingénierie · snow.gg", reason: "Le siège de notre équipe d'ingénierie, à la frontière franco-allemande, avec d'excellentes dorsales réseau européennes." },
       ],
     },
     footer: {
