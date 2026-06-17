@@ -1,0 +1,98 @@
+{
+  "theme": "Dark",
+  "archetype": "Archetype 5 (Luxury / Cinematic Tech)",
+  "design_philosophy": "A highly polished, premium corporate holding company landing page. Dark mode with extremely low-light backgrounds, sharp 1px borders, subtle light bleeds, and zero unnecessary visual clutter. Authority is conveyed through restrained monochrome palettes, stark typography, and deep negative space.",
+  "typography": {
+    "headings": {
+      "family": "Outfit",
+      "import_url": "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap",
+      "classes": "font-sans tracking-tight",
+      "weights": ["light", "bold", "black"]
+    },
+    "body": {
+      "family": "IBM Plex Sans",
+      "import_url": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap",
+      "classes": "font-sans leading-relaxed text-zinc-400"
+    },
+    "stats_and_labels": {
+      "family": "JetBrains Mono",
+      "import_url": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap",
+      "classes": "font-mono uppercase tracking-[0.2em] text-xs text-zinc-500"
+    }
+  },
+  "color_palette": {
+    "background_base": "#050505",
+    "background_surface": "#0A0A0A",
+    "background_glass": "rgba(10, 10, 10, 0.6)",
+    "border_subtle": "rgba(255, 255, 255, 0.08)",
+    "border_hover": "rgba(255, 255, 255, 0.2)",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "text_muted": "#52525B",
+    "accent_primary": "#FFFFFF",
+    "accent_glow": "rgba(255, 255, 255, 0.05)"
+  },
+  "layout_and_spacing": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-24 md:py-32 lg:py-48",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-3 gap-8",
+    "card_padding": "p-8 md:p-12"
+  },
+  "surface_strategies": {
+    "header": "Crystal Glass - backdrop-blur-xl bg-black/60 with a delicate border-b border-white/10. Sticky at the top.",
+    "brand_cards": "Grid Borders - Flat background (#0A0A0A), 1px solid border (border-white/10). On hover, border-white/30 with a subtle -translate-y-1 lift and a very soft box-shadow glow.",
+    "buttons": "Neumorphic/Tactile - Sharp rectangular buttons. Primary: bg-white text-black hover:bg-zinc-200. Secondary (Visit Links): bg-transparent border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-300."
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGRhcmslMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgxNjk4MzYyfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract dark architecture. Use in the Charlotte LLC Hero Section with a heavy overlay (e.g., bg-black/70) so white text stands out perfectly."
+    },
+    "brand_charlotte_telecom": {
+      "url": "https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxmaWJlciUyMG9wdGljJTIwc2VydmVyJTIwbmV0d29ya3xlbnwwfHx8fDE3ODE2OTgzNjJ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Fiber optic wires. Use as a subtle background or header image for the Charlotte Telecommunications card."
+    },
+    "brand_spy_lu": {
+      "url": "https://images.pexels.com/photos/37730211/pexels-photo-37730211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Dark, moody server rack. Use as visual for the spy.lu offshore hosting card."
+    },
+    "brand_snow_gg": {
+      "url": "https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwyfHxkYXJrJTIwZGF0YSUyMGNlbnRlciUyMHNlcnZlcnxlbnwwfHx8fDE3ODE2OTgzNjF8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Modern data center/server rack. Use as visual for the snow.gg performance hosting card."
+    }
+  },
+  "motion_and_interactions": {
+    "page_load": "Subtle fade-in and slide-up (translate-y-4 to 0) for hero text and brand cards using Framer Motion.",
+    "hover_states": "Cards lift slightly. Links have an underline expansion or background color invert.",
+    "language_toggle": "Smooth color crossfade between EN and FR active states."
+  },
+  "content_structure": {
+    "navigation": "Logo (Charlotte LLC text in Outfit, font-bold, tracking-tight). Links: Brands, About. Language Toggle (EN/FR).",
+    "hero_section": "H1 (Charlotte LLC), Subheadline explaining the management of tech infrastructure outside EMEA. No contact form.",
+    "portfolio_section": "Section heading 'Our Brands'. 3-column Bento grid. Each card contains: Brand name (H3), short description, 3 stats/badges styled with JetBrains Mono, and a 'VISIT [DOMAIN]' external CTA button.",
+    "about_section": "Details on Kentucky LLC registration and EMEA exclusion. Minimalist text layout, huge typography.",
+    "footer": "Legal info, copyright, minimal links. Generous py-24 spacing."
+  },
+  "testing_attributes": {
+    "guideline": "ALL interactive elements must use data-testid.",
+    "examples": [
+      "data-testid='nav-brands-link'",
+      "data-testid='lang-toggle-en'",
+      "data-testid='lang-toggle-fr'",
+      "data-testid='visit-charlottetelecom-btn'",
+      "data-testid='visit-spylu-btn'",
+      "data-testid='visit-snowgg-btn'"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Use JavaScript (.js/.jsx), NOT TypeScript (.tsx).",
+    "Create the app as a single-page application (marketing site).",
+    "Implement state for the language toggle (EN/FR) which changes the text content of the page.",
+    "Do NOT use typical Shadcn Card components for the brand showcase; build custom raw HTML/Tailwind divs with exact 1px border and hover effects to maintain the premium Archetype 5 feel.",
+    "Ensure the hero background image has a max overlay opacity of bg-black/60 to let the abstract architecture bleed through without compromising text legibility.",
+    "Apply `data-testid` to every interactive element as specified.",
+    "Install `lucide-react` for any necessary icons.",
+    "Install `framer-motion` for page load and hover animations.",
+    "Ensure Google Fonts (Outfit, IBM Plex Sans, JetBrains Mono) are imported in the global CSS."
+  ]
+}
