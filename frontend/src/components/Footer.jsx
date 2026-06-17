@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
 
 export const Footer = () => {
@@ -11,23 +12,28 @@ export const Footer = () => {
     { label: "snow.gg", url: "https://snow.gg" },
   ];
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+  const pageLinks = [
+    { label: t.nav.brands, to: "/brands" },
+    { label: t.nav.founders, to: "/founders" },
+    { label: t.nav.operations, to: "/operations" },
+    { label: t.nav.about, to: "/about" },
+  ];
 
   return (
     <footer
       data-testid="main-footer"
-      className="relative z-10 bg-[#050505] py-20 md:py-24"
+      className="relative z-10 bg-[#050505] border-t border-white/10 py-20 md:py-24"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <div className="font-display font-bold tracking-tight text-2xl text-white flex items-center gap-2">
+            <Link
+              to="/"
+              className="font-display font-bold tracking-tight text-2xl text-white flex items-center gap-2 w-fit"
+            >
               <span className="inline-block w-2.5 h-2.5 bg-white rotate-45" />
               Charlotte <span className="text-zinc-500 font-light">LLC</span>
-            </div>
+            </Link>
             <p className="font-body text-zinc-500 text-sm leading-relaxed mt-5 max-w-xs">
               {t.footer.tagline}
             </p>
@@ -60,24 +66,17 @@ export const Footer = () => {
               {t.footer.company}
             </h4>
             <ul className="mt-5 space-y-3">
-              <li>
-                <button
-                  data-testid="footer-brands-link"
-                  onClick={() => scrollTo("brands")}
-                  className="font-body text-sm text-zinc-400 hover:text-white transition-colors duration-300"
-                >
-                  {t.footer.brandsLink}
-                </button>
-              </li>
-              <li>
-                <button
-                  data-testid="footer-about-link"
-                  onClick={() => scrollTo("about")}
-                  className="font-body text-sm text-zinc-400 hover:text-white transition-colors duration-300"
-                >
-                  {t.footer.aboutLink}
-                </button>
-              </li>
+              {pageLinks.map((p) => (
+                <li key={p.to}>
+                  <Link
+                    to={p.to}
+                    data-testid={`footer-page-${p.to}`}
+                    className="font-body text-sm text-zinc-400 hover:text-white transition-colors duration-300"
+                  >
+                    {p.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

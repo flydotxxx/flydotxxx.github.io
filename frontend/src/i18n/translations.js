@@ -3,8 +3,19 @@ export const translations = {
     nav: {
       brands: "Brands",
       founders: "Founders",
+      operations: "Operations",
       about: "About",
       langLabel: "Language",
+    },
+    home: {
+      exploreLabel: "Navigate",
+      exploreHeading: "Where would you like to go?",
+      links: [
+        { to: "/brands", label: "Brands", desc: "Three companies, one standard." },
+        { to: "/founders", label: "Founders", desc: "The people behind Charlotte." },
+        { to: "/operations", label: "Operations", desc: "Always on, across time zones." },
+        { to: "/about", label: "About", desc: "A Kentucky LLC, operating worldwide." },
+      ],
     },
     hero: {
       badge: "Kentucky, USA · Operating outside EMEA",
@@ -75,7 +86,7 @@ export const translations = {
       body: [
         "Charlotte LLC is a United States limited liability company registered in the Commonwealth of Kentucky. We own and operate a portfolio of independent technology brands spanning telecommunications and hosting.",
         "Our companies serve customers across the globe outside the EMEA region. We believe infrastructure should be fast, transparently priced, and supported by real people who understand the systems they run.",
-        "Within Europe, our operations are handled by our partner FLYX Ltd — ensuring local presence and compliance across the EMEA region, while Charlotte LLC operates everywhere else.",
+        "Within Europe, our operations are handled by our sister company FLYX Ltd — ensuring local presence and compliance across the EMEA region, while Charlotte LLC operates everywhere else.",
       ],
       stats: [
         { value: "03", label: "Operating brands" },
@@ -140,8 +151,19 @@ export const translations = {
     nav: {
       brands: "Marques",
       founders: "Fondateurs",
+      operations: "Opérations",
       about: "À propos",
       langLabel: "Langue",
+    },
+    home: {
+      exploreLabel: "Naviguer",
+      exploreHeading: "Où souhaitez-vous aller ?",
+      links: [
+        { to: "/brands", label: "Marques", desc: "Trois entreprises, une exigence." },
+        { to: "/founders", label: "Fondateurs", desc: "Les personnes derrière Charlotte." },
+        { to: "/operations", label: "Opérations", desc: "Toujours actif, à travers les fuseaux." },
+        { to: "/about", label: "À propos", desc: "Une LLC du Kentucky, opérant mondialement." },
+      ],
     },
     hero: {
       badge: "Kentucky, USA · Hors EMEA",
@@ -212,7 +234,7 @@ export const translations = {
       body: [
         "Charlotte LLC est une société à responsabilité limitée américaine enregistrée dans le Commonwealth du Kentucky. Nous détenons et opérons un portefeuille de marques technologiques indépendantes couvrant les télécoms et l'hébergement.",
         "Nos entreprises servent des clients partout dans le monde, hors région EMEA. Nous pensons qu'une infrastructure doit être rapide, à prix transparent, et soutenue par de vraies personnes qui comprennent les systèmes qu'elles opèrent.",
-        "En Europe, nos opérations sont gérées par notre partenaire FLYX Ltd — garantissant une présence locale et la conformité dans la région EMEA, tandis que Charlotte LLC opère partout ailleurs.",
+        "En Europe, nos opérations sont gérées par notre société sœur FLYX Ltd — garantissant une présence locale et la conformité dans la région EMEA, tandis que Charlotte LLC opère partout ailleurs.",
       ],
       stats: [
         { value: "03", label: "Marques opérées" },

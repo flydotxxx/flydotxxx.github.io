@@ -9,7 +9,7 @@ export const AboutSection = () => {
     <section
       id="about"
       data-testid="about-section"
-      className="relative z-10 bg-[#0A0A0A] border-y border-white/10 py-24 md:py-32 lg:py-40 scroll-mt-20"
+      className="relative z-10 bg-[#0A0A0A] border-b border-white/10 pt-32 md:pt-40 pb-24 md:pb-32 scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">

@@ -116,7 +116,7 @@ export const BrandsSection = () => {
     <section
       id="brands"
       data-testid="brands-section"
-      className="relative z-10 bg-[#050505] py-24 md:py-32 lg:py-40 scroll-mt-20"
+      className="relative z-10 bg-[#050505] pt-32 md:pt-40 pb-24 md:pb-32 scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <motion.div

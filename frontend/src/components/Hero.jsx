@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
 import { ScrambleText } from "@/components/ScrambleText";
 import { MagneticButton } from "@/components/MagneticButton";
@@ -18,9 +19,10 @@ const item = {
 
 export const Hero = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
+  const scrollDown = () => {
+    const el = document.getElementById("explore");
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -78,7 +80,7 @@ export const Hero = () => {
         >
           <MagneticButton
             data-testid="hero-cta-brands"
-            onClick={() => scrollTo("brands")}
+            onClick={() => navigate("/brands")}
             className="group inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 font-medium text-sm hover:bg-zinc-200"
           >
             {t.hero.ctaBrands}
@@ -87,7 +89,7 @@ export const Hero = () => {
           <MagneticButton
             data-testid="hero-cta-about"
             strength={0.25}
-            onClick={() => scrollTo("about")}
+            onClick={() => navigate("/about")}
             className="inline-flex items-center gap-2 border border-white/20 text-white px-7 py-3.5 font-medium text-sm hover:bg-white hover:text-black hover:!duration-300"
           >
             {t.hero.ctaAbout}
@@ -96,7 +98,7 @@ export const Hero = () => {
       </motion.div>
 
       <motion.button
-        onClick={() => scrollTo("brands")}
+        onClick={scrollDown}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 1 }}

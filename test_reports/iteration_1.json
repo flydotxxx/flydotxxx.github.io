@@ -1,0 +1,36 @@
+{
+  "summary": "Completed frontend-only E2E testing of the Charlotte LLC multi-page site against the external preview URL. All 9 requested feature flows verified successfully: home hero + ticker + ExploreHub (4 hub links), client-side routing to /brands /founders /operations /about, three brand cards with external Visit links, two founder cards with real customer-assets images that loaded (naturalWidth 752 and 1080), three live clocks updating every second (Louisville/Nicosia/Strasbourg), About page references to FLYX and Kentucky, EN/FR toggle changing nav labels and persisting across navigation, mobile hamburger opening menu with 4 links, and footer with brand external + internal page links.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "No issues found — site is a clean static React Router SPA with proper data-testid coverage on all interactive/critical elements (nav links, lang toggles, mobile menu, hub links, brand cards, founder cards, ops clocks, footer links).",
+    "Minor observation: networkidle never settles on this app (continuous ticker/animation requestAnimationFrame). Future testing agents should use `domcontentloaded` + explicit waits instead of networkidle."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100%"},
+  "test_credentials": "N/A — no auth in this app",
+  "seed_data_creation": "None — static frontend, no backend APIs",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Frontend uses React Router (BrowserRouter). All testids confirmed: nav-{brands,founders,operations,about}-link, lang-toggle-{en,fr}, mobile-menu-toggle, mobile-menu, mobile-nav-*-link, explore-hub, hub-link-/{path}, brand-card-{telecom,spy,snow}, founder-card-0/1, ops-clock-0/1/2, footer-page-/{path}. Founder images served from customer-assets.emergentagent.com and load with naturalWidth>0. Use wait_until='domcontentloaded' (NOT networkidle).",
+  "detailed_verification": {
+    "home": {"hero_visible": true, "explore_hub_visible": true, "hub_link_count": 4, "hub_testids": ["hub-link-/brands","hub-link-/founders","hub-link-/operations","hub-link-/about"], "ticker_present": true},
+    "routing": {"/brands": "OK", "/founders": "OK", "/operations": "OK", "/about": "OK"},
+    "brands": {"card_count": 3, "cards": ["brand-card-telecom","brand-card-spy","brand-card-snow"], "external_visit_links": ["https://charlottetelecom.com/","https://spy.lu/","https://snow.gg/"]},
+    "founders": {"founder-card-0": {"src": "customer-assets...59r0avhq_image.png", "naturalWidth": 752, "naturalHeight": 1376, "loaded": true}, "founder-card-1": {"src": "customer-assets...7kograrh_image.png", "naturalWidth": 1080, "naturalHeight": 968, "loaded": true}, "names_present": ["Pierre","Emeric"]},
+    "operations": {"clock_count": 3, "cities": ["Louisville","Nicosia","Strasbourg"], "clock_0_t1_t2": ["08:39:23","08:39:25"], "clock_1_t1_t2": ["15:39:23","15:39:25"], "clock_2_t1_t2": ["14:39:23","14:39:25"], "all_clocks_ticking": true},
+    "about": {"FLYX_mentions": 1, "Kentucky_mentions": 4},
+    "i18n": {"EN_nav_brands": "BRANDS", "FR_nav_brands": "MARQUES", "FR_heading_sample": "Enregistrée au Kentucky. Opérant dans le monde entier, hors EMEA.", "persists_across_nav": true},
+    "mobile_menu": {"toggle_visible_at_390px": true, "menu_visible_after_click": true, "links": ["mobile-nav-brands-link","mobile-nav-founders-link","mobile-nav-operations-link","mobile-nav-about-link"]},
+    "footer": {"total_links": 8, "external_brand_links": ["charlottetelecom.com","spy.lu","snow.gg"], "internal_links": ["/brands","/founders","/operations","/about","/"]}
+  }
+}
