@@ -74,9 +74,19 @@ const CityClock = ({ city, idx, showClock = true }) => {
   );
 };
 
-export const GlobalOps = ({ showClock = true }) => {
+export const GlobalOps = ({ showClock = true, exclude = [], oneLine = false }) => {
   const { t } = useLanguage();
   const ops = t.ops;
+  const cities = ops.cities.filter((c) => !exclude.includes(c.tz));
+  const colsMap = {
+    2: "lg:grid-cols-2",
+    3: "lg:grid-cols-3",
+    4: "lg:grid-cols-4",
+    5: "lg:grid-cols-5",
+  };
+  const gridClass = oneLine
+    ? `grid-cols-1 sm:grid-cols-2 ${colsMap[cities.length] || "lg:grid-cols-4"}`
+    : "grid-cols-1 md:grid-cols-3";
 
   return (
     <section
@@ -103,8 +113,8 @@ export const GlobalOps = ({ showClock = true }) => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-14">
-          {ops.cities.map((city, idx) => (
+        <div className={`grid ${gridClass} gap-6 lg:gap-8 mt-14`}>
+          {cities.map((city, idx) => (
             <CityClock
               key={city.tz}
               city={{ ...city, live: ops.live }}

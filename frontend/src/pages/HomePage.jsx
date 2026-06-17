@@ -65,7 +65,7 @@ export default function HomePage() {
       <Hero />
       <Ticker />
       <ExploreHub />
-      <GlobalOps />
+      <GlobalOps exclude={["Europe/Paris"]} oneLine />
     </>
   );
 }
